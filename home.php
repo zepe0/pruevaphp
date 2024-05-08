@@ -12,8 +12,10 @@
 <body>
     <?php session_start() ?>
     <?php include_once ("header.php"); ?>
-    <?php
 
+    <?php
+    if ($_SESSION["login"] === 0 || isset($_COOKIE["user"]) && isset($_COOKIE["pas"]))
+        header("Location:index.php");
     ?>
     <a href="newpost.php"><button class="btn-new">Añadir nuevo post</button></a>
     <div>
