@@ -1,0 +1,6 @@
+<footer>
+    Contenido del pie...
+
+
+    Contenido del pie general...
+</footer>
