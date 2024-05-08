@@ -15,7 +15,7 @@ footer {
 }
 header {
   height: 5%;
-/*   background: #000; */
+  background: #120203;
   margin-bottom: 10px;
 }
 header img {
@@ -25,9 +25,10 @@ header img {
 .listpost {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 4px;
+  gap: 8px;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 8px;
 }
 .card {
   display: flex;
@@ -36,6 +37,7 @@ header img {
   gap: 4px;
   border: 1px solid #000;
   padding: 4px;
+  max-width: 400px;
 }
 .btn-new {
   padding: 4px;
@@ -56,9 +58,18 @@ header img {
   border-top: 1px solid black;
 }
 .imgpost {
-  max-width: 180px;
+  max-width: 280px;
   margin-bottom: 4px;
 }
 .headName {
   color: white;
+}
+.heart {
+  color: red;
+}
+i {
+  cursor: pointer;
+}
+i:hover {
+  color: red;
 }

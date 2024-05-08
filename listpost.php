@@ -1,5 +1,5 @@
 <?php
-include_once ("bd.php");
+
 
 echo "<section>
         <ul class='listpost'>";
@@ -10,8 +10,12 @@ if (isset($_SESSION["cards"]) && count($_SESSION["cards"]) != 0) {
                 <img>
                 <h2>" . $card->titulo . "</h2>
                 <img src='img/" . $card->img . "' class='imgpost'>
-                <textarea >" . $card->des . "   </textarea>
-                <i class='fa-regular fa-heart'> " . $card->likes . " </i>
+                <p >" . $card->des . "   </p>
+                <div>
+                <i class='fa-regular fa-heart '> </i> 
+                <span> " . $card->likes . "</span>
+                </div>
+                <p>" . $card->comentario . "</p>
             </li>";
     }
 } else {

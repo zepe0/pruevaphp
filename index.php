@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="style.css?v=1.0">
     <title>Prova</title>
 </head>
-<?php include_once ("header.php")
-
-    ?>
 
 <body>
     <form action="" method="POST">
@@ -23,7 +20,6 @@
 
 </html>
 <?php
-
 include_once ("bd.php");
 
 $user = false;
@@ -66,16 +62,16 @@ if (isset($_REQUEST["User"])) {
         setcookie($cookie_name_Pass, $cookie_value_Pass, time() + (86400 * 30), "/");
 
     }
+    if ($user === true && $pas === true) {
+
+        $_SESSION["login"] = 1;
+        $_SESSION["islogin"] = 0;
+        header("Location:home.php");
+        print "<p>" . $_SESSION["login"] . " Variable Login</p>";
+
+
+    }
 }
 
-if ($user === true && $pas === true) {
-
-    $_SESSION["login"] = 1;
-    $_SESSION["islogin"] = 0;
-    /*  header("Location:home.php"); */
-    print "<p>" . $_SESSION["login"] . " Variable Login</p>";
-
-
-}
 
 ?>
