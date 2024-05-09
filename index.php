@@ -25,7 +25,7 @@ include_once ("bd.php");
 $user = false;
 $pas = false;
 
-if ($_SESSION["login"] === 1 || isset($_COOKIE["user"]) && isset($_COOKIE["pas"]))
+if (isset($_SESSION["login"]) && $_SESSION["login"] === 1 /* || (isset($_COOKIE["user"]) && isset($_COOKIE["pas"])) */)
     header("Location:home.php");
 
 
