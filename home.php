@@ -14,7 +14,7 @@
     <?php include_once ("header.php"); ?>
 
     <?php
-    if ( (!isset($_COOKIE["user"]) && !isset($_COOKIE["pas"])) || $_SESSION["login"] === 0 )
+    if ((!isset($_COOKIE["user"]) && !isset($_COOKIE["pas"])) || $_SESSION["login"] === 0)
         header("Location:index.php");
     ?>
     <a href="newpost.php"><button class="btn-new">Añadir nuevo post</button></a>

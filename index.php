@@ -15,7 +15,7 @@
         <input type="checkbox" name="Rec">Recuérdeme
         <button>Enviar</button>
     </form>
-    <a href="Register.php">No tienes Cuenta Regístrate</a>
+    <a href="Register.php">No tienes Cuenta Regístrate ➡</a>
 </body>
 
 </html>

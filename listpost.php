@@ -1,5 +1,17 @@
 <?php
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    var_dump(($_POST));
+    if (isset($_POST['likes'])) {
+        foreach ($_SESSION['cards'] as &$card) {
+            if ($card->titulo === $_POST["titulo"]) {
+
+                $card->likes += $likesToAdd;
+                break;
+            }
+        }
+    }
+}
 
 echo "<section>
         <ul class='listpost'>";
@@ -12,8 +24,10 @@ if (isset($_SESSION["cards"]) && count($_SESSION["cards"]) != 0) {
                 <img src='img/" . $card->img . "' class='imgpost'>
                 <p >" . $card->des . "   </p>
                 <div>
-                <i class='fa-regular fa-heart '> </i> 
-                <span> " . $card->likes . "</span>
+                <form method='POST'><button><i class='fa-regular fa-heart '> </i> </button>
+                <span name='likes'> " . $card->likes . "</span>
+                <input type='hidden' name='titulo' value='" . $card->titulo . "'>
+                </form>
                 </div>
                 <p>" . $card->comentario . "</p>
             </li>";
