@@ -11,7 +11,7 @@
 <body>
     <?php
     session_start();
-  
+
     $errorUser;
     $errorPass;
     $errorPassdos;
@@ -31,12 +31,26 @@
         }
         ;
         if (isset($_POST["Pass"])) {
+            $regexpas = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\W).{8,}$/';
+
+
             if (strlen($_POST["Pass"]) < 8) {
                 $errorPass = "La Contraseña debe contener 8 caracteres mínimo";
                 $error = true;
+
             } else {
                 $errorPass = false;
             }
+            if ($errorPass === false) {
+
+                if (!preg_match($regexpas, $_POST["Pass"])) {
+                    $errorPass = "La Contraseña debe contener al menos una mayúscula, una minúscula y un caracter especial";
+                    $error = true;
+                } else {
+                    $errorPass = false;
+                }
+            }
+
 
         }
         ;
@@ -44,9 +58,10 @@
             if ($_POST["Passdos"] != $_POST["Pass"]) {
                 $errorPassdos = "Las Contraseñas no coinciden";
 
+
             }
             if (empty($_POST["Passdos"])) {
-                $errorPassdos = "Las Contraseñas no coinciden";
+                $errorPassdos = "Rellena campo";
                 $error = true;
             } else {
                 $errorPassdos = false;
@@ -54,18 +69,23 @@
 
         }
         ;
+        if (strlen($_POST["email"]) === 0) {
+            $error = true;
+            $errorEmail = "Email incorrecto";
+        }
         if (isset($_POST["email"])) {
             $email = $_POST["email"];
 
             $regex = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
 
-            if (preg_match($regex, $email)) {
+            if (!preg_match($regex, $email)) {
                 $error = true;
-                $errorEmail = "Las Contraseñas no coinciden";
+                $errorEmail = "Email incorrecto";
             } else {
-                $errorEmail = false;
+                $error = false;
             }
         }
+
         ;
         if ($error === false) {
             header("Location:home.php");
