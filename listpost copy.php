@@ -79,29 +79,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <button><i class="fa-solid fa-x"></i></button>
                         </form>
                     </div>
-                    <div class="comentarios">
-                        <?php
-                        if (isset($card->comentario)) {
+                <?php endif; ?>
 
-                            if (is_array($card->comentario)) {
-                                foreach ($card->comentario as $comentario) {
+                <div class="comentarios">
+                    <?php
+                    if (isset($card->comentario)) {
 
-                                    echo "<div class='flex'><img src='img/$comentario->user' class='imgComent'></img><p>{$comentario->coment}</p></div>";
-                                    echo "";
-                                }
-                            } else {
+                        if (is_array($card->comentario)) {
+                            foreach ($card->comentario as $comentario) {
 
-                                echo "<p>Error: Los comentarios no están en el formato esperado.</p>";
+                                echo "<div class='flex'><img src='img/$comentario->user' class='imgComent'></img><p>{$comentario->coment}</p></div>";
+                                echo "";
                             }
                         } else {
 
-                            echo "<p>No hay comentarios para esta tarjeta.</p>";
+                            echo "<p>Error: Los comentarios no están en el formato esperado.</p>";
                         }
+                    } else {
 
-                        ?>
-                    </div>
-                <?php endif; ?>
+                        echo "<p>No hay comentarios para esta tarjeta.</p>";
+                    }
 
+                    ?>
+                </div>
             </li>
         <?php endforeach; ?>
     </ul>

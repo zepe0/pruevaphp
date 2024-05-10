@@ -16,7 +16,12 @@ $_SESSION["cards"] = array(
             (object) array(
                 'coment' => 'Boo es increíble, ¿verdad? No puedo creer que un niño humano nos haya robado el corazón.',
                 'user' => 'mike.jpeg'
+            ),
+            (object) array(
+                'coment' => '¿Creen que Boo pueda abrir puertas a otros mundos? Eso podría ser muy útil para mí.',
+                'user' => 'randall.jpeg'
             )
+            
         )
     ),
     (object) array(
