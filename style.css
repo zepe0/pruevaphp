@@ -17,6 +17,10 @@ header {
   height: 5%;
   background: #120203;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 header img {
   width: 20%;
@@ -26,9 +30,10 @@ header img {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding: 8px;
+  justify-content: space-evenly;
 }
 .card {
   display: flex;
@@ -37,7 +42,7 @@ header img {
   gap: 4px;
   border: 1px solid #000;
   padding: 4px;
-  max-width: 400px;
+  max-width: 600px;
 }
 .btn-new {
   padding: 4px;
@@ -58,7 +63,8 @@ header img {
   border-top: 1px solid black;
 }
 .imgpost {
-  max-width: 280px;
+  max-width: 90px;
+  max-height: 90px;
   margin-bottom: 4px;
 }
 .headName {
@@ -78,4 +84,34 @@ i:hover {
   flex-direction: column;
   align-items: center;
   gap: 4px;
+}
+.subtitulo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.navarCard {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.imgComent {
+  border-radius: 39%;
+  width: 30px;
+
+  height: 30px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.flexcenter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  color: rgba(255, 0, 0, 0.623);
 }

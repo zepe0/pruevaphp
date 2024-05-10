@@ -11,6 +11,7 @@
 <body>
     <?php
     session_start();
+  
     $errorUser;
     $errorPass;
     $errorPassdos;

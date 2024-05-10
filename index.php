@@ -4,22 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css?v=1.0">
+    <link rel="stylesheet" href="style.css?v=1.6">
     <title>Prova</title>
 </head>
+<?php include_once ("header.php") ?>
 
 <body>
-    <form action="" method="POST">
+    <form action="" method="POST" class="register">
         <input type="text" placeholder="Usuario" name="User">
         <input type="password" placeholder="Contraseña" name="Pass">
-        <input type="checkbox" name="Rec">Recuérdeme
+        <div><input type="checkbox" name="Rec">Recuérdeme</div>
         <button>Enviar</button>
+        <a href="Register.php">No tienes Cuenta Regístrate ➡</a>
     </form>
-    <a href="Register.php">No tienes Cuenta Regístrate ➡</a>
 </body>
 
 </html>
 <?php
+
 include_once ("bd.php");
 
 $user = false;
@@ -32,15 +34,15 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] === 1 /* || (isset($_COOKIE[
 if (isset($_REQUEST["User"])) {
 
     if (isset($_POST["User"]) && $_POST["User"] != "") {
-        $_POST["User"] === $_SESSION["user"] ? $user = true : print ("<div><p>Usuario no registrado</p></div>");
+        $_POST["User"] === $_SESSION["user"] ? $user = true : print ("<div class='flexcenter'><p>Usuario no registrado</p></div>");
 
     } else {
 
-        print ("<div><p>Inserta un usuario</p></div>");
+        print ("<div class='flexcenter'><p>Inserta un usuario</p></div>");
     }
 
     if (isset($_POST["Pass"]) && $_POST["Pass"] != "") {
-        $_POST["Pass"] === $_SESSION["pass"] ? $pas = true : print ("<div><p>Contraseña Incorrecta</p></div>");
+        $_POST["Pass"] === $_SESSION["pass"] ? $pas = true : print ("<div class='flexcenter'><p>Contraseña Incorrecta</p></div>");
 
         $options = [
             'cost' => 12,
@@ -49,7 +51,7 @@ if (isset($_REQUEST["User"])) {
 
     } else {
 
-        print ("<div><p>Inserta una Contraseña</p></div>");
+        print ("<div class='flexcenter'><p>Inserta una Contraseña</p></div>");
     }
     if (isset($_POST["Rec"]) && $_POST["Rec"] === "on") {
 
